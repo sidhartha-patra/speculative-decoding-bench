@@ -1,0 +1,25 @@
+[package]
+name = "speculative-decoding-bench"
+version = "0.1.0"
+edition = "2021"
+description = "A simulation harness and benchmark suite for speculative decoding: correct speculative sampling, distribution-preservation verification, and analytical-vs-empirical speedup analysis."
+license = "MIT"
+authors = ["Sidhartha Patra <sidhartha57@gmail.com>"]
+repository = "https://github.com/sidhartha-patra/speculative-decoding-bench"
+readme = "README.md"
+keywords = ["speculative-decoding", "llm", "inference", "benchmark", "sampling"]
+categories = ["simulation", "algorithms", "command-line-utilities"]
+
+[lib]
+name = "speculative_decoding_bench"
+path = "src/lib.rs"
+
+[[bin]]
+name = "specbench"
+path = "src/main.rs"
+
+[dependencies]
+
+[profile.release]
+opt-level = 3
+lto = true
